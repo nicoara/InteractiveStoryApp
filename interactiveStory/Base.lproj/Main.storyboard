@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beginning" translatesAutoresizingMaskIntoConstraints="NO" id="q65-7k-o1N">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiw-bR-UJF">
                                 <rect key="frame" x="246" y="522" width="108" height="30"/>
                                 <state key="normal" title="Start Adventure"/>
@@ -24,21 +28,34 @@
                                     <segue destination="LHW-ak-X7y" kind="show" identifier="startAdventure" id="RbP-Ok-tgW"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beginning" translatesAutoresizingMaskIntoConstraints="NO" id="q65-7k-o1N">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJf-OM-0Wh">
+                                <rect key="frame" x="44" y="452" width="512" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wgD-qK-jva"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BJf-OM-0Wh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="0sD-ll-VCB"/>
                             <constraint firstItem="iiw-bR-UJF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Sm-Vi-kcC"/>
                             <constraint firstItem="q65-7k-o1N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Af9-48-g7e"/>
                             <constraint firstAttribute="trailing" secondItem="q65-7k-o1N" secondAttribute="trailing" id="CAg-xq-js5"/>
                             <constraint firstItem="q65-7k-o1N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GqU-VO-Bg1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iiw-bR-UJF" secondAttribute="bottom" constant="48" id="NTY-2z-Q7R"/>
+                            <constraint firstItem="BJf-OM-0Wh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qg4-Li-Grg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BJf-OM-0Wh" secondAttribute="trailing" constant="24" id="crE-Nq-K7J"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="q65-7k-o1N" secondAttribute="bottom" id="iYw-X5-rES"/>
+                            <constraint firstItem="iiw-bR-UJF" firstAttribute="top" secondItem="BJf-OM-0Wh" secondAttribute="bottom" constant="40" id="sc0-cb-fMB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xi8-7K-wMt"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="BJf-OM-0Wh" id="k9f-4C-2eu"/>
+                        <outlet property="textFieldBottomConstraint" destination="sc0-cb-fMB" id="79O-Nk-QxK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
